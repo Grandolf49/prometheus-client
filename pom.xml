@@ -10,10 +10,11 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.prometheus</groupId>
-	<artifactId>helloworld</artifactId>
+	<artifactId>lora</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Prometheus Metrics Example</name>
-	<description>Demo project for Spring Boot</description>
+	<name>Edifici Lora</name>
+	<description>Lora Endpoints of eddifici</description>
+	<packaging>war</packaging>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -36,6 +37,12 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		
 
 		<dependency>
 			<groupId>io.prometheus</groupId>
@@ -47,6 +54,27 @@
 			<groupId>io.prometheus</groupId>
 			<artifactId>simpleclient_spring_boot</artifactId>
 			<version>0.4.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.prometheus</groupId>
+			<artifactId>simpleclient_pushgateway</artifactId>
+			<version>0.8.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.micrometer/micrometer-core -->
+		<dependency>
+		    <groupId>io.micrometer</groupId>
+		    <artifactId>micrometer-core</artifactId>
+		    <version>1.5.1</version>
+		</dependency>
+
+		
+		<!-- https://mvnrepository.com/artifact/io.micrometer/micrometer-registry-prometheus -->
+		<dependency>
+		    <groupId>io.micrometer</groupId>
+		    <artifactId>micrometer-registry-prometheus</artifactId>
+		    <version>1.5.1</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
