@@ -11,26 +11,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.edifice.lora.service.CounterService;
 
-
 @RestController
 @RequestMapping("/counter")
-public class CounterController 
-{
+public class CounterController {
 
-	private CounterService counterService  ;
+	private CounterService counterService;
 
+	@GetMapping(value = "/count")
+	public Map incrementCounter(HttpServletRequest request) {
+		HashMap<String, Object> mp = new HashMap();
 
-	@GetMapping(value="/count")
-	public Map incrementCounter(HttpServletRequest request)
-	{
-		HashMap<String,Object> mp =new HashMap();
-		
 		/**
 		 * do authorization check and passed to service layer for processing
 		 */
 		return counterService.incrementCounter();
-		
+
 	}
 
-	
 }
