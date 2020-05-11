@@ -15,7 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.edifice.lora.service.CounterrService;
 
+import io.prometheus.client.spring.boot.EnablePrometheusEndpoint;
+import io.prometheus.client.spring.boot.EnableSpringBootMetricsCollector;
 
+
+@EnablePrometheusEndpoint
+@EnableSpringBootMetricsCollector
 
 @RestController
 @RequestMapping("/counter")

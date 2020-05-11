@@ -14,7 +14,7 @@ import io.prometheus.client.Counter;
 import io.prometheus.client.Histogram;
 
 @Service("counterrService")
-public class CounterrService //<MeterRegistry> 
+public class CounterrService  
 {
 
 	  //@Autowired 
@@ -32,8 +32,8 @@ public class CounterrService //<MeterRegistry>
 	  @PostConstruct
 	  public void init() {
 		  
-		  requests = Counter.build().name("edifice_counter").help("Total number of requests.").register();
-		  //lightOrderCounter = this.meterRegistry.counter("beer.orders", "type", "light"); // 1 - create a counter
+		  requests = Counter.build().namespace("java").name("edifice_counter").labelNames("edifice","Project","Group","Module","SensonrCnt").help("Total number of requests.").register();
+		 // lightOrderCounter = this.meterRegistry.counter("beer.orders", "type", "light"); // 1 - create a counter
 
 	    //gauge =
 	     //   Gauge.builder("stock.size", this, StockManager::getNumberOfItems)
@@ -41,12 +41,11 @@ public class CounterrService //<MeterRegistry>
 	       //     .register(meterRegistry);
 	  }
 
-	  /*public CounterrService(MeterRegistry meterRegistry) 
-	  {
-	        //this.meterRegistry = meterRegistry;
-	  }
-	*/
-	  
+	  //public CounterrService(MeterRegistry meterRegistry) 
+	  //{
+	   //     this.meterRegistry = meterRegistry;
+	   // }
+	
 	public HashMap incrementCounter()
 	{
 		
@@ -57,8 +56,11 @@ public class CounterrService //<MeterRegistry>
 		// Increase the counter metric
 		//try
 		//{
-			requests.inc();
-			lightOrderCounter.increment();
+		//requests.inc(); //increment counter with no labesl
+		
+		requests.labels("edifice","testPrj","tstGrp","tstModule","tstSensorCnt").inc();
+
+					//	lightOrderCounter.increment();
 	
 			//Histogram.Timer requestTimer = requestLatency.startTimer();
 		//}
