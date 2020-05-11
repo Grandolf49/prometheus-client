@@ -2,14 +2,11 @@ package com.edifice.lora.service;
 
 import java.util.HashMap;
 
-import org.springframework.stereotype.Service;
-
 import com.edifice.lora.utilities.Constants;
 
 import io.prometheus.client.Counter;
 import io.prometheus.client.Histogram;
 
-@Service
 public class CounterService 
 {
 

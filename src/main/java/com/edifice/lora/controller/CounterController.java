@@ -3,13 +3,10 @@ package com.edifice.lora.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.edifice.lora.service.CounterService;
@@ -20,7 +17,6 @@ import com.edifice.lora.service.CounterService;
 public class CounterController 
 {
 
-	@Resource
 	private CounterService counterService  ;
 
 

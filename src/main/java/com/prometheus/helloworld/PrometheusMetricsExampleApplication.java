@@ -1,22 +1,14 @@
 package com.prometheus.helloworld;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import io.prometheus.client.Counter;
-import io.prometheus.client.Histogram;
-import io.prometheus.client.spring.boot.EnablePrometheusEndpoint;
-import io.prometheus.client.spring.boot.EnableSpringBootMetricsCollector;
-
+/*
 @SpringBootApplication
 @RestController
 @EnablePrometheusEndpoint
 @EnableSpringBootMetricsCollector
+*/
 public class PrometheusMetricsExampleApplication {
-
-	// Define a counter metric for /prometheus
+	
+	/*// Define a counter metric for /prometheus
 	static final Counter requests = Counter.build().name("requests_total").help("Total number of requests.").register();
 	// Define a histogram metric for /prometheus
 	static final Histogram requestLatency = Histogram.build().name("requests_latency_seconds")
@@ -38,6 +30,7 @@ public class PrometheusMetricsExampleApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PrometheusMetricsExampleApplication.class, args);
-	}
+	}*/
+	
 
 }
