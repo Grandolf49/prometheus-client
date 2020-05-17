@@ -5,6 +5,7 @@ import java.util.HashMap;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.edifice.lora.utilities.Constants;
@@ -20,6 +21,9 @@ public class CounterrService
 	  //@Autowired 
 	  //private MeterRegistry meterRegistry;
 
+	  @Value("${lora.promethues.labels}")
+	  private String[] loraLabels;
+
 	//static final Counter requests = Counter.build().name("edifice_counter").help("Total number of requests.").labelNames("edifice","testPrj","tstGrp","tstModule","tstSensorCnt").register();
 	private Counter requests ;//= Counter.build().name("edifice_counter").help("Total number of requests.").register();
 	// Define a histogram metric for /prometheus
@@ -31,8 +35,8 @@ public class CounterrService
 	  
 	  @PostConstruct
 	  public void init() {
-		  
-		  requests = Counter.build().namespace("java").name("edifice_counter").labelNames("edifice","Project","Group","Module","SensonrCnt").help("Total number of requests.").register();
+	
+		  requests = Counter.build().namespace("java").name("edifice_counter").labelNames(loraLabels).help("Total number of requests.").register();
 		 // lightOrderCounter = this.meterRegistry.counter("beer.orders", "type", "light"); // 1 - create a counter
 
 	    //gauge =
@@ -58,7 +62,7 @@ public class CounterrService
 		//{
 		//requests.inc(); //increment counter with no labesl
 		
-		requests.labels("edifice","testPrj","tstGrp","tstModule","tstSensorCnt").inc();
+		requests.labels("edifice","testPrj","tstSolution","tstGrp","tstSensor").inc();
 
 					//	lightOrderCounter.increment();
 	
