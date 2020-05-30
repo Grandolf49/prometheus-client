@@ -48,4 +48,16 @@ public class TempratureController {
 		return tempratureService.addTemprature(sensorName, Float.parseFloat(temprature), vendor,gatewayId) ;
 	}
 	
+	@PostMapping(value="/getAllDevices")
+	public Map getAllDevices(HttpServletRequest request)
+	{
+		HashMap<String,Object> mp =new HashMap();
+		
+		/**
+		 * do authorization check and passed to service layer for processing
+		 */
+		
+		return tempratureService.testTemprature("") ;
+	}
+	
 }
