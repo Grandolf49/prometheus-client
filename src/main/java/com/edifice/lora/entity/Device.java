@@ -8,6 +8,7 @@ public class Device
 	private String name ;
 	private String status ;
 	private String description ;
+	private String accessToken ;
 	
 	private DeviceType deviceType ;
 
@@ -107,6 +108,20 @@ public class Device
 	 */
 	public void setDeviceType(DeviceType deviceType) {
 		this.deviceType = deviceType;
+	}
+
+	/**
+	 * @return the accessToken
+	 */
+	public String getAccessToken() {
+		return accessToken;
+	}
+
+	/**
+	 * @param accessToken the accessToken to set
+	 */
+	public void setAccessToken(String accessToken) {
+		this.accessToken = accessToken;
 	}
 	
 }

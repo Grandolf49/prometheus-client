@@ -1,0 +1,62 @@
+Readme
+https://cloud.google.com/community/tutorials/cloud-iot-prometheus-monitoring
+https://github.com/GoogleCloudPlatform/community/tree/master/tutorials/cloud-iot-prometheus-monitoring
+http://www.cupcarbon.com/
+ibM simulator for iot
+https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-live-data-visualization-in-web-apps
+https://mucahit.io/2018/08/27/instrumenting-and-monitoring-spring-boot-2-applications/
+
+--check
+https://tech.willhaben.at/monitoring-metrics-using-prometheus-a6d498dfcfba
+
+
+--sub
+https://www.vertabelo.com/blog/a-saas-subscription-data-model/
+
+-IOT DB 
+https://thenewstack.io/4-steps-to-select-the-right-database-for-your-internet-of-things-system/
+
+https://thingsboard.io/pricing/
+thinger git 
+https://sitewhere.io/en/
+https://github.com/sitewhere/sitewhere **** 
+https://flatlogic.com/blog/how-to-build-an-iot-dashboard/ **
+https://github.com/thingsboard/thingsboard ****
+
+https://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-creating-a-multi-project-build/
+https://callistaenterprise.se/blogg/teknik/2017/05/12/building-microservices-part-6-configuration-server/
+
+https://dzone.com/articles/buiding-microservice-using-springboot-and-docker
+https://medium.com/@hudsonmendes/docker-spring-boot-microservice-with-gradle-9785087e7992
+	1) user docker file to create image of our application
+	2)
+
+============================================================
+component
+ 1) dynamic dashboar d
+ 2) rule enine
+ 3) 
+
+============================================================
+https://microservices.io/patterns/microservices.html ** 
+
+microservice archete
+	1) configuration -- Zookeeper/Curator
+	2) discovery servier -- eureka()
+	3) authereiztion
+	4) centralized log : https://www.google.com/search?q=microservices+centralized+logging&rlz=1C1GCEA_enIN793IN794&oq=microservices+central&aqs=chrome.0.0j69i57j0l6.4868j0j7&sourceid=chrome&ie=UTF-8&safe=active&ssui=on
+	5) 	Load ballanc : Ribbon
+	
+	
+=========================================sit
+
+================================ terminologu
+Dvice id is different ,t is to be generated usng java.util.uuid 
+
+endPointKey is different thn device Id it is to be geenrated wth combination of soluton/group/deviceid
+
+to send telemetry ewe can sent 
+
+http://ourSite.com/tempretuer/v1/<endPointKey>
+post date will be tempreture 
+	

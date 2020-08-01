@@ -11,7 +11,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.edifice.lora.entity.Device;
+import com.edifice.lora.entity.GroupDevices;
 import com.edifice.lora.mapper.DeviceMapper;
+import com.edifice.lora.mapper.GroupDeviceMapper;
 
 @Repository
 @Component(value="deviceDao")
@@ -51,6 +53,27 @@ public class DeviceDaoImpl {
             }
         } ,new DeviceMapper());
 	}
+	
+	public List<GroupDevices> getInfoByDeviceToken(String accessToken) 
+	{
+		// TODO Auto-generated method stub
+		String sql = "select * " + 
+				"from  group_devices " + 
+				"left outer join device on device.id = group_devices.device_id " + 
+				"left outer join solutions_group on solutions_group.id = group_devices.solution_group_id " + 
+				"left outer join groups on groups.id = solutions_group.group_id " + 
+				"left outer join solutions on solutions.id = solutions_group.solution_id  " + 
+				"where is_deleted = false and access_token = ?" ;
+					
+				  
+		return template.query(sql,new PreparedStatementSetter() {
+            public void setValues(PreparedStatement preparedStatement) throws SQLException {
+                preparedStatement.setString(1, accessToken);
+            }
+        } ,new GroupDeviceMapper());
+	}
 
+	
+	
 
 }
